@@ -1,0 +1,83 @@
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= product.name %></small></h4>
+    </div>
+    <div class="col-xs-4">
+      
+      <%= form_for order_item, remote: true do |f| %>
+      <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>
+</div>
+
+
+      <%= form_for order_item, remote: true do |f| %>
+      <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+                <!-- Content -->
+                <div id="content">
+                    <!-- Case -->
+                    <div class="case">
+                            <h3>newest</h3>
+                            <!-- Row -->
+                            <div class="row">      
+                                <div class="ul">
+                                    <% @products.each do |product| %>
+                                    <div class="li">
+                                        <%= link_to @product, class: 'product' do %>              
+                                    <!--     <a href="#" class="product" title="Product 1"> -->                 
+                                            <%#= image_tag product.image.url(:small) %>
+                                            <span class="order model">
+                                                <%= product.name %>
+                                            </span>
+                                            <span class="order index-description">
+                                                <%= product.description %>
+                                                <span class="number">
+                                                    <!-- 1111 -->
+                                                </span>
+                                            </span>
+                                            <span class="order">
+                                                <span class="buy-text">
+                                                    Buy Now
+                                                </span>
+<!--                                                <span class="price">price is unnecicery due to the fact that there are many ways to make the fish and it may therefore potentioly change in price
+                                                    <span class="dollar">
+                                                        $
+                                                    </span>
+                                                    <%#= product.price %>-->
+                                                    <!--<span class="sub-text">
+                                                        .99 
+                                                    </span>-->
+                                                </span>
+                                            </span> 
+                                        </a>
+                                        <% end %> 
+
+                                    </div>
+                                    <% end %>
+                                </div>
+                                <div class="cl">&nbsp;</div>            
+                            </div>
+                            <!-- End Row -->
+                    </div>
+                    <!-- End Case -->
+                </div>
+                <!-- End Content -->

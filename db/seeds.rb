@@ -11,11 +11,11 @@ puts "Generating sample products"
 4.times do |n|
   Product.create(name: "product Name", 
   	             description: "Lorem ipsum dolor", 
-  	             # image: File.new("#{Rails.root}/public/images/atlantic-salmon#{n}.jpg",
+  	             image: File.new("#{Rails.root}/public/images/atlantic-salmon#{n}.jpg"),
   	             	price: 0.29,
                   active: true)
                  # quantity: 1
-  puts "product  created"
+  puts "product created"
 end
 puts "Sample products created"
 OrderStatus.delete_all

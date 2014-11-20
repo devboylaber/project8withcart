@@ -8,7 +8,7 @@
                             <div class="row">      
                                 <div class="ul">
                                   <% @products.each do |product| %>
-                                    <%= form_for order_item, remote: true do |f| %>
+                                    <%= form_for order_item do |f| %>
                                     <div class="li">
                                                       
                                         <a href="#" class="product" title="Product 1">                 
@@ -36,8 +36,9 @@
                                                                                                 <span class="buy-text">
                                                     <%= f.hidden_field :product_id, value: product.id %>
                                                     <%= f.submit "Add to Cart", class: "btn btn-primary" %>
-                                               </span>
-                                            </span> 
+                                                    <%#= link_to "Add to cart", {:controller => "order_item", :action => "order_item", :order_item => order_item.id }%>
+                                               </span><%#= link_to "#{current_order.order_items.size} Items in Cart", cart_path, class: "btn btn-link" %>
+                                            </span> <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
                                         </a>
                                         
 

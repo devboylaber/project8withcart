@@ -40,7 +40,8 @@
                             <!-- Row -->
                             <div class="row">      
                                 <div class="ul">
-                                    <% @products.each do |product| %>
+                                  <% @products.each do |product| %>
+                                    <%= form_for order_item, remote: true do |f| %>
                                     <div class="li">
                                         <%= link_to @product, class: 'product' do %>              
                                     <!--     <a href="#" class="product" title="Product 1"> -->                 
@@ -55,24 +56,27 @@
                                                 </span>
                                             </span>
                                             <span class="order">
-                                                <span class="buy-text">
-                                                    Buy Now
-                                                </span>
-<!--                                                <span class="price">price is unnecicery due to the fact that there are many ways to make the fish and it may therefore potentioly change in price
-                                                    <span class="dollar">
+                                               <span class="price">
+                                                  <!--  <span class="dollar">
                                                         $
-                                                    </span>
-                                                    <%#= product.price %>-->
+                                                    </span>-->
+                                                    <%= number_to_currency product.price %>
                                                     <!--<span class="sub-text">
                                                         .99 
                                                     </span>-->
                                                 </span>
+                                                <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+                                                                                                <span class="buy-text">
+                                                    <%= f.hidden_field :product_id, value: product.id %>
+                                                    <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+                                               </span>
                                             </span> 
                                         </a>
                                         <% end %> 
 
                                     </div>
                                     <% end %>
+                                  <% end %>  
                                 </div>
                                 <div class="cl">&nbsp;</div>            
                             </div>

@@ -22,28 +22,28 @@ OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 puts "Generating sample users"
 Order.create! id: 1
-# 1.times do |n|
-#   User.create(email: "user@user.com", 
-#   	             password: "useruser",
-#   	             password_confirmation: "useruser")
-# puts "user created"
-# end
-# # puts "Sample users created"
-# puts "Generating sample users"
-# 1.times do |n|
-#   User.create(email: "admin@admin.com", 
-#   	             password: "adminadmin",
-#   	             password_confirmation: "adminadmin",  
-#   	             admin: true)
-#   puts "admin created"
-# end
-# # puts "Sample admins created"
-# puts "Generating sample super admins"
-# 1.times do |n|
-#   User.create(email: "super@admin.com", 
-#   	             password: "superadmin",
-#   	             password_confirmation: "superadmin",  
-#   	             super_admin: true)
-#   puts "super admin  created"
-# end
-# # puts "Sample super admins created"
+1.times do |n|
+  User.create(email: "user@user.com", 
+  	             password: "useruser",
+  	             password_confirmation: "useruser")
+puts "user created"
+end
+# puts "Sample users created"
+puts "Generating sample users"
+1.times do |n|
+  User.create(email: "admin@admin.com", 
+  	             password: "adminadmin",
+  	             password_confirmation: "adminadmin",  
+  	             admin: true)
+  puts "admin created"
+end
+# puts "Sample admins created"
+puts "Generating sample super admins"
+1.times do |n|
+  User.create(email: "super@admin.com", 
+  	             password: "superadmin",
+  	             password_confirmation: "superadmin",  
+  	             super_admin: true)
+  puts "super admin  created"
+end
+# puts "Sample super admins created"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120131743) do
+ActiveRecord::Schema.define(version: 20141120231808) do
 
   create_table "order_items", force: true do |t|
     t.integer  "product_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20141120131743) do
     t.decimal  "total_price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "stripe_customer_token"
   end
 
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"

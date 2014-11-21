@@ -1,5 +1,5 @@
 class AddStripeToOrderItems < ActiveRecord::Migration
   def change
-  	  add_column :orders, :stripe_customer_token, :string
+  	  add_column :order_items, :stripe_customer_token, :string
   end
 end

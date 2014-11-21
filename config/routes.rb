@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   # Rails.application.routes.draw do
     # resources :products, only: [:index, :show] 
     resource :cart, only: [:show]
-    resources :order_items, only: [:create, :update, :destroy]
+    # resources :order_items, only: [:create, :update, :destroy]
+    resources :order_items
+    get 'order_items' => 'order_items/create'
     root to: "products#index"
   # end
 
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :products
 
-  
+  resources :charges
   # # get 'home/index'
 
   # root 'products#index'

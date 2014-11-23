@@ -9,10 +9,10 @@
 
 puts "Generating sample products"
 1.times do |n|
-  Product.create(name: "product Name", 
-  	             description: "Lorem ipsum dolor", 
+  Product.create(name: "Tasty Fish", 
+  	             description: "Fried", 
   	             image: File.new("#{Rails.root}/public/images/atlantic-salmon#{n}.jpg"),
-  	             	price: 0.29,
+  	             	price: 3.29,
                   active: true)
                  # quantity: 1
   puts "product created"

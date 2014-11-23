@@ -12,30 +12,32 @@ class ChargesController < ApplicationController
 		# Get the credit card details submitted by the form
 		stripe_card_token = params[:stripeToken]
 
-		# Create a Customer
-		customer = Stripe::Customer.create(
-		  :card => token,
-		  :description => "payinguser@example.com"
-		)
+		# # Create a Customer
+		# customer = Stripe::Customer.create(
+		#   :card  => params[:stripeToken],
+		#   :email => params[:stripeEmail]
+		# )
 
 		# Charge the Customer instead of the card
 		Stripe::Charge.create(
+			:card  => params[:stripeToken],
+		    # :email => params[:stripeEmail],
 		    :amount => 1000, # incents
 		    :currency => "usd",
-		    :customer => customer.id
+		    # :customer => customer.id
 		)
 
-		# Save the customer ID in your database so you can use it later
-		save_stripe_customer_id(User.find(params[:user]), customer.id)
+		# # Save the customer ID in your database so you can use it later
+		# save_stripe_customer_id(User.find(params[:user]), customer.id)
 
-		# Later...
-		customer_id = get_stripe_customer_id(user)
+		# # Later...
+		# customer_id = get_stripe_customer_id(user)
 
-		Stripe::Charge.create(
-		  :amount   => 1500, # $15.00 this time
-		  :currency => "usd",
-		  :customer => customer_id
-		)
+		# Stripe::Charge.create(
+		#   :amount   => 1500, # $15.00 this time
+		#   :currency => "usd",
+		#   :customer => customer_id
+		# )
 	end
 	def edit 
 	end

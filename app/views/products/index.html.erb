@@ -1,39 +1,58 @@
-  <!-- Main -->
-        <div id="main">
-            <!-- Shell -->
-            <div class="shell">
-                <!-- Header -->
-                <div id="header">
-                    <h1><a href="#" class="notext" title="Shabbos Fish">Shabbos Fish</a></h1>
+<!-- Main -->
+<div id="main">
+    <!-- Shell -->
+    <div class="shell">
+        <!-- Header -->
+        <div id="header">
+            <h1>
+                <a href="#" class="notext" title="Shabbos Fish">
+                    Shabbos Fish
+                </a>
+            </h1>
 
-                    <div class="cl">&nbsp;</div>
-                </div>
-                <!-- End Header -->
-                <!-- Slider -->
-                <div id="main-slider">
-                    <div id="slider-holder">
-                        <ul>
-                            <li>
-                                <div class="cnt">
-                                    <h4>Enjoy our delecious Fish</h4>
-                                    <h2>5% off online purchases</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla mattis nisl, sit amet tincidunt.</p>
-                                    <span class="price"><span class="dollar">$</span> 1599<span class="sub-text">.99</span></span>
-                                    <a href="#" class="btn notext" title="Order Now">Order Now</a>
-                                    <div class="cl">&nbsp;</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End Slider -->
-
-    <%# @products.each do |product| %>
-      <%= render "product_row", product: @product, order_item: @order_item %>
-    <%# end %>
-
-
-            </div>
-            <!-- End Shell -->
+            <div class="cl">&nbsp;</div>
         </div>
-        <!-- End Main -->
+        <!-- End Header -->
+        <!-- Slider -->
+        <div id="main-slider">
+            <div id="slider-holder">
+                <ul>
+                    <li>
+                        <div class="cnt">
+                            <h4>
+                                Enjoy our delecious Fish
+                            </h4>
+                            <h2>
+                                5% off online purchases
+                            </h2>
+                            <p>
+                                Fished stright from the sea.
+                            </p>
+                            <span class="price">
+                                <span class="dollar">
+                                    $
+                                </span>
+                                1599
+                                <span class="sub-text">
+                                    .99
+                                </span>
+                            </span>
+                            <a href="#" class="btn notext" title="Order Now">
+                                Order Now
+                            </a>
+                            <div class="cl">&nbsp;</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Slider -->
+
+<%# @products.each do |product| %>
+<%= render "product_row", product: @product, order_item: @order_item %>
+<%# end %>
+
+    </div>
+    <!-- End Shell -->
+</div>
+<!-- End Main -->

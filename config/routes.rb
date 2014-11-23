@@ -19,8 +19,9 @@ Rails.application.routes.draw do
     root to: "products#index"
   # end
 
-  # # , path: "/admins"
+
   # resources :orders
+
 
   resources :products
 

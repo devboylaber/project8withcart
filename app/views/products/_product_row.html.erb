@@ -1,55 +1,55 @@
 
-                <!-- Content -->
-                <div id="content">
-                    <!-- Case -->
-                    <div class="case">
-                            <h3>newest</h3>
-                            <!-- Row -->
-                            <div class="row">      
-                                <div class="ul">
-                                  <% @products.each do |product| %>
-                                    <%= form_for order_item do |f| %>
-                                    <div class="li">
-                                                      
-                                        <a href="#" class="product" title="Product 1">                 
-                                            <%= image_tag product.image.url(:small) %>
-                                            <span class="order model">
-                                                <%= product.name %>
-                                            </span>
-                                            <span class="order index-description">
-                                                <%= product.description %>
-                                                <span class="number">
-                                                    <!-- 1111 -->
-                                                </span>
-                                            </span>
-                                            <span class="order">
-                                               <span class="price">
-                                                  <!--  <span class="dollar">
-                                                        $
-                                                    </span>-->
-                                                    <%= number_to_currency product.price %>
-                                                    <!--<span class="sub-text">
-                                                        .99 
-                                                    </span>-->
-                                                </span>
-                                                <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-                                                                                                <span class="buy-text">
-                                                    <%= f.hidden_field :product_id, value: product.id %>
-                                                    <%= f.submit "Add to Cart", class: "btn btn-primary" %>
-                                                    <%#= link_to "Add to cart", {:controller => "order_item", :action => "order_item", :order_item => order_item.id }%>
-                                               </span><%#= link_to "#{current_order.order_items.size} Items in Cart", cart_path, class: "btn btn-link" %>
-                                            </span> <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
-                                        </a>
-                                        
+<!-- Content -->
+<div id="content">
+    <!-- Case -->
+    <div class="case">
+            <h3>newest</h3>
+            <!-- Row -->
+            <div class="row">      
+                <div class="ul">
+                  <% @products.each do |product| %>
+                    <%= form_for order_item do |f| %>
+                    <div class="li">
+                                      
+                        <a href="#" class="product" title="Product 1">                 
+                            <%= image_tag product.image.url(:small) %>
+                            <span class="order model">
+                                <%= product.name %>
+                            </span>
+                            <span class="order index-description">
+                                <%= product.description %>
+                                <span class="number">
+                                    <!-- 1111 -->
+                                </span>
+                            </span>
+                            <span class="order">
+                               <span class="price">
+                                  <!--  <span class="dollar">
+                                        $
+                                    </span>-->
+                                    <%= number_to_currency product.price %>
+                                    <!--<span class="sub-text">
+                                        .99 
+                                    </span>-->
+                                </span>
+                                <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+                                                                                <span class="buy-text">
+                                    <%= f.hidden_field :product_id, value: product.id %>
+                                    <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+                                    <%#= link_to "Add to cart", {:controller => "order_item", :action => "order_item", :order_item => order_item.id }%>
+                               </span><%#= link_to "#{current_order.order_items.size} Items in Cart", cart_path, class: "btn btn-link" %>
+                            </span> <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+                        </a>
+                        
 
-                                    </div>
-                                    <% end %>
-                                  <% end %>  
-                                </div>
-                                <div class="cl">&nbsp;</div>            
-                            </div>
-                            <!-- End Row -->
                     </div>
-                    <!-- End Case -->
+                    <% end %>
+                  <% end %>  
                 </div>
-                <!-- End Content -->
+                <div class="cl">&nbsp;</div>            
+            </div>
+            <!-- End Row -->
+    </div>
+    <!-- End Case -->
+</div>
+<!-- End Content -->

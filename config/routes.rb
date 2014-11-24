@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   # Rails.application.routes.draw do
     # resources :products, only: [:index, :show] 
-    resource :cart
+    resource :cart, only: [:show]
+        # resource :carts, only: [:show]
     # resources :order_items, only: [:create, :update, :destroy]
     resources :order_items
     # get 'order_items' => 'order_items/create'

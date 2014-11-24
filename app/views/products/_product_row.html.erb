@@ -9,7 +9,7 @@
             <div class="row">      
                 <div class="ul">
                   <% @products.each do |product| %>
-                    <%= form_for @cart, url: 'http://localhost:3000/cart/show' do |f| %>
+                    <%= form_for cart_path, url: 'http://localhost:3000/cart' do |f| %>
                     <div class="li">               
                         <a href="#" class="product" title="Product 1">                 
                             <%= image_tag product.image.url(:small) %>

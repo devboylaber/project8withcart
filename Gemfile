@@ -42,7 +42,6 @@ gem 'sqlite3'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-
 gem 'paperclip', '~> 4.2.0'
 gem 'simple_form', '~> 3.0.2'
 gem 'kaminari'

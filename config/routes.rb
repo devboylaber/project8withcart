@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # get 'order_items/create'
+  # get 'carts/create'
 
-  # get 'order_items/update'
+  # get 'carts/update'
 
-  # get 'order_items/destroy'
+  # get 'carts/destroy'
 
   # get 'carts/show' 
 
@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     # resources :products, only: [:index, :show] 
     resource :cart
         # resource :carts, only: [:show]
-    # resources :order_items, only: [:create, :update, :destroy]
-    resources :order_items
-    # get 'order_items' => 'order_items/create'
+    # resources :carts, only: [:create, :update, :destroy]
+    resources :carts
+    # get 'carts' => 'carts/create'
     root to: "products#index"
   # end
 

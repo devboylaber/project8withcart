@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
 #   def new
-#     @order_item = OrderItem.new
+#     @cart = cart.new
 #   end
 
 #   # GET /orders/1/edit
@@ -9,26 +9,26 @@ class CartsController < ApplicationController
 #   end
 #   def create
 #     @cart = current_order
-#     @cart = @cart.order_items.new(@order_item_params)
+#     @cart = @cart.carts.new(@cart_params)
 #     @cart.save
 #     session[:order_id] = @order.id
 #   end	
 	
 #   def show
-#     @order_items = current_order.order_items(@order_item_params)
+#     @carts = current_order.carts(@cart_params)
 #   end
 # end
 
   def index
-    @order_items = OrderItem.all
+    @carts = cart.all
   end
   def show
-    @order_items = current_order.order_items
+    @carts = current_order.carts
   end
 
   # GET /orders/new
   def new
-    @order_item = OrderItem.new
+    @cart = cart.new
   end
 
   # GET /orders/1/edit
@@ -36,7 +36,7 @@ class CartsController < ApplicationController
   end
   def create
     @order = current_order
-    @order_item = @order.order_items.new(@order_item_params)
+    @cart = @order.carts.new(@cart_params)
     @order.save
     session[:order_id] = @order.id
     render :show
@@ -44,19 +44,19 @@ class CartsController < ApplicationController
 
   def update
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.update_attributes(order_item_params)
-    @order_items = @order.order_items
+    @cart = @order.carts.find(params[:id])
+    @cart.update_attributes(cart_params)
+    @carts = @order.carts
   end
 
   def destroy
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.destroy
-    @order_items = @order.order_items
+    @cart = @order.carts.find(params[:id])
+    @cart.destroy
+    @carts = @order.carts
   end
 private
-  def order_item_params
-    params.require(:order_item).permit(:quantity, :product_id, :email)
+  def cart_params
+    params.require(:cart).permit(:quantity, :product_id, :email, :size)
   end
 end

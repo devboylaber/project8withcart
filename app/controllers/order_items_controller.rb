@@ -1,15 +1,15 @@
-class OrderItemsController < ApplicationController
-  # before_action :set_order_item, only: [:show, :edit, :update, :destroy]
+class cartsController < ApplicationController
+  # before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def index
-    @order_items = OrderItem.all
+    @carts = cart.all
   end
   def show
-    @order_item = OrderItem.find(params[:id])
+    @cart = cart.find(params[:id])
   end
 
   # GET /orders/new
   def new
-    @order_item = OrderItem.new
+    @cart = cart.new
   end
 
   # GET /orders/1/edit
@@ -17,26 +17,26 @@ class OrderItemsController < ApplicationController
   end
   def create
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
+    @cart = @order.carts.new(cart_params)
     @order.save
     session[:order_id] = @order.id
   end
 
   def update
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.update_attributes(order_item_params)
-    @order_items = @order.order_items
+    @cart = @order.carts.find(params[:id])
+    @cart.update_attributes(cart_params)
+    @carts = @order.carts
   end
 
   def destroy
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.destroy
-    @order_items = @order.order_items
+    @cart = @order.carts.find(params[:id])
+    @cart.destroy
+    @carts = @order.carts
   end
 private
-  def order_item_params
-    params.require(:order_item).permit(:quantity, :product_id, :email)
+  def cart_params
+    params.require(:cart).permit(:quantity, :product_id, :email)
   end
 end

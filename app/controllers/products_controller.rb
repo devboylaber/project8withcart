@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
    #modified
   def index
     @products = Product.all
-    @order_item = current_order.order_items.new
-    @cart = current_order.order_items.new
+    @cart = current_order.carts.new
+    @cart = current_order.carts.new
   end
     def show
     @product = Product.find(params[:id])

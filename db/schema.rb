@@ -10,10 +10,10 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
+ 
 ActiveRecord::Schema.define(version: 20141120231808) do
 
-  create_table "order_items", force: true do |t|
+  create_table "carts", force: true do |t|
     t.integer  "product_id"
     t.integer  "order_id"
     t.decimal  "unit_price"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20141120231808) do
     t.string   "stripe_customer_token"
   end
 
-  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
-  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id"
+  add_index "carts", ["order_id"], name: "index_carts_on_order_id"
+  add_index "carts", ["product_id"], name: "index_carts_on_product_id"
 
   create_table "order_statuses", force: true do |t|
     t.string   "name"

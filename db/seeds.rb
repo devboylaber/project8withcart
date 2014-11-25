@@ -8,10 +8,10 @@
 
 
 puts "Generating sample products"
-1.times do |n|
+1.times do |pic, n, d, price|
   Product.create(name: "Tasty Fish", 
   	             description: "Fried", 
-  	             image: File.new("#{Rails.root}/public/images/atlantic-salmon#{n}.jpg"),
+  	             image: File.new("#{Rails.root}/public/images/atlantic-salmon#{pic}.jpg"),
   	             	price: 3.29,
                   active: true)
                  # quantity: 1

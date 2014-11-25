@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
 	end
 	def create
 
-		@amount = @order
+		
 
 
 		# Set your secret key: remember to change this to your live secret key in production
@@ -27,10 +27,11 @@ class ChargesController < ApplicationController
 		Stripe::Charge.create(
 			:card  => params[:stripeToken],
 		    # :email => params[:stripeEmail],
-		    :amount => @amount, # incents
+		    :amount => 1000, # incents
 		    :currency => "usd",
 		    # :customer => customer.id
 		)
+		
 		rescue Stripe::CardError => e
            flash[:alert] = "e.message"
            redirect_to charges_path

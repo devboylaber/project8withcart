@@ -9,7 +9,7 @@ class CartsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
-    # redirect_if_success("/cart") if @order.destroy
+    # redirect_if_success("/carts") if @order.destroy
   end
   def checkout
     redirect_to charges_controller_create_url

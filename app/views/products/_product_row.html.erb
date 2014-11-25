@@ -35,7 +35,7 @@
                                 <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
                                 <span class="buy-text">
                                     <%= f.hidden_field :product_id, value: product.id %>
-                                    <%= f.submit "Add to Cart", url: 'http://localhost:3000/cart', class: "btn btn-primary" %>
+                                    <%= f.submit "Add to Carts", url: 'http://localhost:3000/carts', class: "btn btn-primary" %>
                                </span>
                         </a>
                     </div>

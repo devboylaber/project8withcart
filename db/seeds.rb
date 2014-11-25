@@ -5,23 +5,54 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# i = 1
 
+# puts "Generating sample products"
 
-puts "Generating sample products"
-1.times do |pic, n, d, price|
-  Product.create(name: "Tasty Fish", 
+# while i < 5 do
+1.times do
+ Product.create(name: "Tasty Fish", 
   	             description: "Fried", 
-  	             image: File.new("#{Rails.root}/public/images/atlantic-salmon#{pic}.jpg"),
+  	             image: File.new("#{Rails.root}/public/images/atlantic-salmon1.jpg"),
   	             	price: 3.29,
                   active: true)
                  # quantity: 1
-  puts "product created"
+  # puts "product created"
+
+# i = i + 1
 end
+1.times do
+ Product.create(name: "Slamon", 
+                 description: "Breaded to delecion!", 
+                 image: File.new("#{Rails.root}/public/images/atlantic-salmon2.jpg"),
+                  price: 4.39,
+                  active: true)
+end
+1.times do
+ Product.create(name: "Tilapia", 
+                 description: "Grilled to perfection.", 
+                 image: File.new("#{Rails.root}/public/images/atlantic-salmon3.jpg"),
+                  price: 5.49,
+                  active: true)
+end
+1.times do
+ Product.create(name: "Caviar", 
+                 description: "Not for the faint of heart", 
+                 image: File.new("#{Rails.root}/public/images/atlantic-salmon4.jpg"),
+                  price: 2.99,
+                  active: true)
+end
+
+
 puts "Sample products created"
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 puts "Generating sample users"
 Order.create! id: 1
+Order.create! id: 2
+Order.create! id: 3
+Order.create! id: 4
+Order.create! id: 5
 1.times do |n|
   User.create(email: "user@user.com", 
   	             password: "useruser",

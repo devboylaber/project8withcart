@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
      # or similar logic
   end
 
+
       # def current_order
       #   @current_order ||= Order.find(session[:order_id]) if session[:order_id]
       # end

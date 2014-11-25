@@ -1,10 +1,15 @@
 class ChargesController < ApplicationController
 
 	def index
+
 	end
 	def new 
 	end
 	def create
+
+		@amount = @order
+
+
 		# Set your secret key: remember to change this to your live secret key in production
 		# See your keys here https://dashboard.stripe.com/account
 		Stripe.api_key = "sk_test_pwbtG5aDcpDzZyHUJLzyxVAu"
@@ -22,10 +27,14 @@ class ChargesController < ApplicationController
 		Stripe::Charge.create(
 			:card  => params[:stripeToken],
 		    # :email => params[:stripeEmail],
-		    :amount => 1000, # incents
+		    :amount => @amount, # incents
 		    :currency => "usd",
 		    # :customer => customer.id
 		)
+		rescue Stripe::CardError => e
+           flash[:alert] = "e.message"
+           redirect_to charges_path
+
 
 		# # Save the customer ID in your database so you can use it later
 		# save_stripe_customer_id(User.find(params[:user]), customer.id)

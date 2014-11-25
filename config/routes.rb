@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   # Rails.application.routes.draw do
     # resources :products, only: [:index, :show] 
     # resource :carts, only: [:show]
-    resource :carts, only: [:show]
+    # resources :carts
+    get 'carts/' => 'carts#show'
+    post 'carts/' => 'carts#show'
+    
         # resource :carts, only: [:show]
     # resources :order_items, only: [:create, :update, :destroy]
     resources :order_items
@@ -27,7 +30,17 @@ Rails.application.routes.draw do
 
   resources :products
 
-  resources :charges
+  # resources :charges
+
+  get 'charges/index'
+
+  get 'charges/' => 'charges#new'
+  get 'charges/new' => 'charges#new'
+  get 'charges/create' => 'charges#create'
+
+  # post 'charges/' => 'charges#new'
+  # post 'charges/new' => 'charges#new'
+  post 'charges' => 'charges#create'
   # # get 'home/index'
 
   # root 'products#index'

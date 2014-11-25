@@ -17,12 +17,16 @@
             <div class="btn-group">
               <%= f.submit "Update Quantity", class: "btn btn-primary" %>
               <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, class: "btn btn-danger" } %>
+
+              <%#
+              = link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, class: "btn btn-danger" } %>
             </div>
           </div>
         </div>
         <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
       <% end %>
     </div>
+    
     
   </div>
 </div>

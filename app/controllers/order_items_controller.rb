@@ -35,9 +35,10 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    redirect_if_success("/cart") if @order.destroy
   end
 private
   def order_item_params
-    params.require(:order_item).permit(:quantity, :product_id, :email)
+    params.require(:order_item).permit(:quantity, :product_id, :email, :stripe_card_token)
   end
 end

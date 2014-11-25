@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
   	@product = Product.new(params[:id])
   	if @product.save
   		redirect_to products_path
+  		flash[:notice] = "Product created!"
+  	else
+  		flash[:alert] = "Product was not created. Please see what went wrong."
   	end
   end
   def show

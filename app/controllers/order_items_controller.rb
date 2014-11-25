@@ -20,6 +20,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
+    redirect_if_success("/cart") if @order.save
   end
 
   def update

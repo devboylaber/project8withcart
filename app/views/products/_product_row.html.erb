@@ -35,7 +35,7 @@
                                 <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
                                                                                 <span class="buy-text">
                                     <%= f.hidden_field :product_id, value: product.id %>
-                                    <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+                                    <%= f.submit "Add to Cart", url: 'http://localhost:3000/cart', class: "btn btn-primary" %>
                                     <%#= link_to "Add to cart", {:controller => "order_item", :action => "order_item", :order_item => order_item.id }%>
                                </span><%#= link_to "#{current_order.order_items.size} Items in Cart", cart_path, class: "btn btn-link" %>
                             </span> <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>

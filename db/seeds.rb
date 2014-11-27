@@ -10,6 +10,12 @@
 # puts "Generating sample products"
 
 # while i < 5 do
+
+1.times do
+ Product.create(
+                 slide_image: File.new("#{Rails.root}/public/images/fish-dorado.jpg")
+                 )
+end
 1.times do
  Product.create(name: "Tasty Fish", 
   	             description: "Fried", 

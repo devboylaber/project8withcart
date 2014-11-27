@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resources :order_items
     # get 'order_items' => 'order_items/create'
     root to: "products#index"
+    
+    get '/' => 'home#index'
   # end
 
 

@@ -9,7 +9,7 @@
 <% end %>
 <% if @order_items.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping carts.  Please <%= link_to "go back", root_path %> and add some items to your carts.
+    Your cart is empty.  Click <%= link_to "here", root_path %> to fill it.
   </p>
 <% else %>
   <% @order_items.each do |order_item| %>
